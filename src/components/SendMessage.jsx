@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db, auth } from "../firebase";
-import {EmojiPicker} from 'emoji-picker-react';
+import EmojiPicker from 'emoji-picker-react';
 
 const SendMessage = () => {
     const [input, setInput] = useState("");
