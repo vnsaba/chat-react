@@ -1,5 +1,6 @@
 
-const UserInfo = () => {
+const UserInfo = ( {currenUser} ) => {
+  if (!currenUser) return null;
   return (
     <>
       {/* perfil del usuario */}
@@ -11,12 +12,12 @@ const UserInfo = () => {
 
             {/* avatar */}
             <div className="w-10 h-10 rounded-full  overflow-hidden bg-cover bg-center ring-slate-500 ring-2">
-              <img src="https://i.pravatar.cc/150?u=john" alt="User" className="w-full h-full object-cover" />
+              <img src={currenUser.photoURL} alt="User" className="w-full h-full object-cover" />
             </div>
 
             {/* nombre  / my acount */}
             <div >
-              <h3 className="text-sm font-bold text-white leading-tight">John Doe</h3>
+              <h3 className="text-sm font-bold text-white leading-tight">{currenUser.displayName}</h3>
               <p className="text-[11px] text-gray-500 font-medium">My Account</p>
             </div>
           </div>
